@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Contact } from "../../types/contacts.types";
 import { FaPhone, FaEnvelope } from "react-icons/fa6";
-import { FaBirthdayCake } from "react-icons/fa";
+import { FaBirthdayCake, FaRegTrashAlt } from "react-icons/fa";
 import styles from "./ContactCard.module.scss";
 import clsx from "clsx";
 import { deriveBirthday } from "./helpers";
+import { useDeleteContact } from "../../hooks/useDeleteContact";
 
 interface ContactCardProps {
   contact: Contact;
@@ -12,6 +13,13 @@ interface ContactCardProps {
 
 export function ContactCard({ contact }: ContactCardProps) {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
+
+  const deleteContactMutation = useDeleteContact();
+
+  const handleDelete = (event: React.MouseEvent<HTMLDivElement>) => {
+    event.stopPropagation();
+    deleteContactMutation(contact.id);
+  };
 
   return (
     <div
@@ -33,13 +41,16 @@ export function ContactCard({ contact }: ContactCardProps) {
           <span>{contact.phone}</span>
         </div>
         <div className={styles.detailsLine}>
-          <FaEnvelope />
+          <FaEnvelope size={"1.25rem"} />
           <span>{contact.email}</span>
         </div>
         <div className={styles.detailsLine}>
-          <FaBirthdayCake />
+          <FaBirthdayCake size={"1.25rem"} />
           <span>{deriveBirthday(contact.birthday)}</span>
         </div>
+      </div>
+      <div className={styles.delete} onClick={(e) => handleDelete(e)}>
+        <FaRegTrashAlt size={"1.25rem"} />
       </div>
     </div>
   );

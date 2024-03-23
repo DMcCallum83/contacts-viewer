@@ -1,5 +1,9 @@
 :root {
   --mainColor: #2d2d2d;
+  --magenta: #ff00ff;
+
+  --mainBoxShadow: 0 2px 5px 2px #2d2d2d22;
+  --mainHoverShadow: 0 2px 5px 2px #2d2d2d44;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

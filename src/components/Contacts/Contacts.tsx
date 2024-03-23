@@ -1,4 +1,6 @@
 import { useGetContacts } from "../../hooks/useGetContacts";
+import { ContactCard } from "./ContactCard";
+import styles from "./Contacts.module.scss";
 
 export function Contacts() {
   const { data, isLoading, isError } = useGetContacts();
@@ -10,5 +12,11 @@ export function Contacts() {
     return <span>Whoops something went wrong...</span>;
   }
 
-  return data?.map((contact) => <span key={contact.name}>{contact.name}</span>);
+  return (
+    <div className={styles.contactsList}>
+      {data
+        ?.sort((a, b) => a.name.localeCompare(b.name))
+        .map((contact) => <ContactCard contact={contact} key={contact.name} />)}
+    </div>
+  );
 }

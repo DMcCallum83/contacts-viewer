@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--mainColor);
+  padding: 1.5rem 2rem;
+
+  svg {
+    fill: var(--magenta);
+  }
+}
+
+.appName {
+  color: white;
+  font-size: 1.5rem;
+}

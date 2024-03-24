@@ -1,30 +1,27 @@
-# React + TypeScript + Vite
+# Contacts Viewer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![alt text](image.png)
 
-Currently, two official plugins are available:
+A simple data-driven contacts viewing application
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Get it running
 
-## Expanding the ESLint configuration
+- `npm i` to install all packages required
+- add a `.env` file at root with a `VITE_BASE_API_URL` variable
+- `npm run dev` to get it running
+- `npm run dev -- --host` to expose it on your local network to test on mobile
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Tech used
 
-- Configure the top-level `parserOptions` property like this:
+- `react-query` with `axios` used in hooks for queries and mutations
+- css modules for majority of component styling
+- `prettier`/`eslint` configured for auto formatting and linting
+- `vitests` and `react-testing-library` for testing
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## What I'd do next
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Implement edit and create:
+  - a new modal which contains inputs for each of the data points
+  - for create, a file picker to choose avatar
+- testing:
+  - implement msw to mock data calls and perform more user-like UI testing

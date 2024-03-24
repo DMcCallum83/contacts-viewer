@@ -42,7 +42,7 @@ export function ContactCard({ contact }: ContactCardProps) {
         </div>
         <div className={styles.detailsLine}>
           <FaEnvelope size={"1.25rem"} />
-          <span>{contact.email}</span>
+          <span>{contact.email.toLowerCase()}</span>
         </div>
         <div className={styles.detailsLine}>
           <FaBirthdayCake size={"1.25rem"} />

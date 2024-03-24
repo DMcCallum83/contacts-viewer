@@ -5,7 +5,7 @@ export function Header() {
   return (
     <header className={styles.header}>
       <span className={styles.appName}>Contacts Viewer</span>
-      <FaEye size={"2rem"} color="white" />
+      <FaEye size={"2rem"} />
     </header>
   );
 }

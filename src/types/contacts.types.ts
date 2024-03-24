@@ -7,3 +7,12 @@ export type Contact = {
   birthday: string;
   id: string;
 };
+
+export type NewContact = {
+  createdAt: string;
+  name: string;
+  avatar: string;
+  email: string;
+  phone: string;
+  birthday: string;
+};

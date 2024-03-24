@@ -21,10 +21,6 @@
       box-shadow 300ms ease;
     box-shadow: var(--mainHoverShadow);
     transform: translateY(-3px);
-    .delete {
-      transition: opacity 500ms ease-in;
-      opacity: 1;
-    }
   }
 
   .delete {
@@ -43,6 +39,9 @@
   }
   &.isActive {
     border: 1px solid var(--magenta);
+    .delete {
+      opacity: 1;
+    }
   }
 
   @media screen and (max-width: 450px) {

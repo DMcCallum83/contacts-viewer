@@ -1,5 +1,5 @@
-import { Contacts } from "../components/Contacts/Contacts";
-import styles from "./_shared.module.scss";
+import { Contacts } from '../components/Contacts/Contacts';
+import styles from './_shared.module.scss';
 
 export function ContactsPage() {
   return (

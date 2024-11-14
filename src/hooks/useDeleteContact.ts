@@ -1,5 +1,5 @@
-import axios from "axios";
-import { useMutation, useQueryClient } from "react-query";
+import axios from 'axios';
+import { useMutation, useQueryClient } from 'react-query';
 
 /**
  * Fires an HTTP DELETE to delete a contact based on the id passed in, and invalidates the contacts query to refetch after success
@@ -12,7 +12,7 @@ export const useDeleteContact = () => {
       return axios.delete(`${import.meta.env.VITE_BASE_API_URL}${id}`);
     },
     onSuccess: () => {
-      queryClient.invalidateQueries("contacts");
+      queryClient.invalidateQueries('contacts');
     },
   });
 

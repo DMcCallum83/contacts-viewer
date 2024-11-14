@@ -1,6 +1,6 @@
-import { useGetContacts } from "../../hooks/useGetContacts";
-import { ContactCard } from "./ContactCard";
-import styles from "./Contacts.module.scss";
+import { useGetContacts } from '../../hooks/useGetContacts';
+import { ContactCard } from './ContactCard';
+import styles from './Contacts.module.scss';
 
 export function Contacts() {
   const { data, isLoading, isError } = useGetContacts();

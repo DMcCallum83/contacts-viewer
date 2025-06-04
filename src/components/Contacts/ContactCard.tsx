@@ -24,7 +24,7 @@ export function ContactCard({ contact }: ContactCardProps) {
         <img
           className={styles.avatar}
           alt={`${contact.name}'s Avatar`}
-          src={contact.avatar}
+          src="/images/generic-avatar.svg"
         />
         <span className={styles.name}>{contact.name}</span>
       </div>
